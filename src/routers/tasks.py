@@ -8,6 +8,7 @@ router = APIRouter(
     tags=['tasks']
 )
 
+
 class Task(BaseModel):
     description: str
     is_urgent: bool

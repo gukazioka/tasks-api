@@ -1,8 +1,8 @@
 import sqlalchemy
-import databases
+from databases import Database
 from src.constants.universal import DATABASE_URL
 
-database = databases.Database(DATABASE_URL)
+database = Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
 

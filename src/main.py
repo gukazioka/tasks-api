@@ -1,36 +1,26 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from src.constants.universal import TAGS_METADATA
 from src.database.database import database
+from src.routers import tasks
 
-app = FastAPI()
+app = FastAPI(
+    title='TasksAPI',
+    description='An API to perform database operations related to tasks',
+    openapi_tags=TAGS_METADATA
+)
+app.include_router(tasks.router)
 
 
-@app.on_event("startup")
+@app.on_event('startup')
 async def startup():
     await database.connect()
 
 
-@app.on_event("shutdown")
+@app.on_event('shutdown')
 async def shutdown():
     await database.disconnect()
-
-
-class Task(BaseModel):
-    description: str
-    is_urgent: bool 
-    is_done: bool = False
 
 
 @app.get('/ping')
 async def ping():
     return {'message': 'pong'}
-
-
-@app.post('/tasks/new')
-async def register_tasks():
-    pass
-
-
-@app.get('/tasks')
-async def get_tasks():
-    return Task(description='Foo', is_urgent=True, is_done=False)

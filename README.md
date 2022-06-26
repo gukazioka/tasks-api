@@ -27,7 +27,7 @@ $ ./venv/Scripts/activate
 
 On **Linux**:
 ```
-$ source venv/bin/Activate
+$ source venv/bin/activate
 ```
 
 After this, third-party packages must be installed. The file `requirements.txt` contains it. You can use pip to install packages.
@@ -43,3 +43,5 @@ For local execution, `uvicorn` is recommended to it. Execute the following comma
 ```
 $ uvicorn src.main:app --host $IP --port $PORT
 ```
+
+*Change $IP and the $PORT 

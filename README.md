@@ -20,6 +20,10 @@ On **Windows/MAC**:
 ```
 $ ./venv/Scripts/activate
 ```
+- In case of error when executing the script on **Windows** **PowerShew ADM**:
+  ```
+  $ Set-ExecutionPolicy -ExecutionPolicy AllSigned
+  ```
 
 On **Linux**:
 ```

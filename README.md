@@ -20,7 +20,7 @@ On **Windows/MAC**:
 ```
 $ ./venv/Scripts/activate
 ```
-- In case of error when executing the script on **Windows** **PowerShew ADM**:
+- In case of error when executing the script on **Windows** run on **PowerShell** as **ADM**:
   ```
   $ Set-ExecutionPolicy -ExecutionPolicy AllSigned
   ```

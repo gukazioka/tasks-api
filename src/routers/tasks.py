@@ -43,6 +43,7 @@ async def update_tasks(boolean: bool, task_id: int):
     if not response:
         raise HTTPException(status_code=404)
 
+
 @router.delete('/tasks/del/{task_id}')
 async def delete_tasks(task_id: int):
     """

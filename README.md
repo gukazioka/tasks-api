@@ -20,7 +20,7 @@ On **Windows/MAC**:
 ```
 $ ./venv/Scripts/activate
 ```
-- In case of error when executing the script on **Windows** run on **PowerShell** as **ADM**:
+- If an permission error has occurred on Windows, execute this command on Powershell as administrator:
   ```
   $ Set-ExecutionPolicy -ExecutionPolicy AllSigned
   ```
@@ -44,4 +44,4 @@ For local execution, `uvicorn` is recommended to it. Execute the following comma
 $ uvicorn src.main:app --host $IP --port $PORT
 ```
 
-*Change $IP and the $PORT 
+*Replace $IP and the $PORT to desired ones*

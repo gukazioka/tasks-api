@@ -33,7 +33,7 @@ async def get_tasks():
     return await database.fetch_all(tasks.select())
 
 
-@router.put('/tasks/done/{boolean}/{task_id}')
+@router.put('/done/{boolean}/{task_id}')
 async def update_tasks(boolean: bool, task_id: int):
     """
     Receive a task id and boolean status, then update a task
@@ -44,7 +44,7 @@ async def update_tasks(boolean: bool, task_id: int):
         raise HTTPException(status_code=404)
 
 
-@router.delete('/tasks/del/{task_id}')
+@router.delete('/del/{task_id}')
 async def delete_tasks(task_id: int):
     """
     Receive an id and delete a task corresponding to it.
